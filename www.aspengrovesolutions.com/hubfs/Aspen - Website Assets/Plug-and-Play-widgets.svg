@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="704.957" height="424" viewBox="0 0 704.957 424">
+  <g id="Group_1342" data-name="Group 1342" transform="translate(-616.855 -1134.313)">
+    <g id="Group_1329" data-name="Group 1329">
+      <g id="Group_1330" data-name="Group 1330">
+        <g id="Rectangle_878-2" data-name="Rectangle 878-2">
+          <rect id="Rectangle_977" data-name="Rectangle 977" width="648" height="424" rx="20" transform="translate(616.855 1134.313)" fill="#fff"/>
+          <rect id="Rectangle_978" data-name="Rectangle 978" width="647" height="423" rx="19.5" transform="translate(617.355 1134.813)" fill="none" stroke="#231f20" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Group_1331" data-name="Group 1331">
+        <g id="Rectangle_878-2-2" data-name="Rectangle 878-2">
+          <path id="Path_4632" data-name="Path 4632" d="M653.744,1182.75h574.222c10.432,0,18.889,7.571,18.889,16.91v324.68c0,9.339-8.457,16.91-18.889,16.91H653.744c-10.432,0-18.889-7.571-18.889-16.91V1199.66C634.855,1190.321,643.312,1182.75,653.744,1182.75Z" fill="#f4f4f3"/>
+          <path id="Path_4633" data-name="Path 4633" d="M653.744,1183.173h574.222c10.171,0,18.417,7.382,18.417,16.487v324.68c0,9.1-8.246,16.487-18.417,16.487H653.744c-10.171,0-18.417-7.382-18.417-16.487V1199.66C635.327,1190.555,643.573,1183.173,653.744,1183.173Z" fill="#f4f4f3"/>
+        </g>
+      </g>
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="5.5" cy="5.5" r="5.5" transform="translate(634.855 1149.313)" fill="#ef662f"/>
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="5.5" cy="5.5" r="5.5" transform="translate(656.855 1149.313)" fill="#f79e31"/>
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="5.5" cy="5.5" r="5.5" transform="translate(678.855 1149.313)" fill="#8ab547"/>
+      <g id="Group_984" data-name="Group 984">
+        <path id="Rectangle_856" data-name="Rectangle 856" d="M715.855,1147.313h523a8,8,0,0,1,8,8h0a8,8,0,0,1-8,8h-523a8,8,0,0,1-8-8h0A8,8,0,0,1,715.855,1147.313Z" fill="#f4f4f3"/>
+      </g>
+    </g>
+    <g id="Group_1332" data-name="Group 1332">
+      <rect id="Rectangle_979" data-name="Rectangle 979" width="130.089" height="149.377" rx="12.16" transform="translate(656.855 1204.123)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Mortgage" transform="translate(721.899 1278.812)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-36.952" y="0">Mortgage</tspan></text>
+    </g>
+    <g id="Group_1333" data-name="Group 1333">
+      <rect id="Rectangle_980" data-name="Rectangle 980" width="130.089" height="149" rx="12.16" transform="translate(656.855 1369.938)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Sell_my_Property" data-name="Sell my
+Property" transform="translate(721.899 1444.438)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-27.225" y="0">Sell my</tspan><tspan x="-31.875" y="18">Property</tspan></text>
+    </g>
+    <g id="Group_1334" data-name="Group 1334">
+      <rect id="Rectangle_981" data-name="Rectangle 981" width="130.089" height="149" rx="12.16" transform="translate(805.37 1369.938)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Neighborhood" transform="translate(870.415 1444.438)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-54.24" y="0">Neighborhood</tspan></text>
+    </g>
+    <g id="Group_1335" data-name="Group 1335">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="130.089" height="149" rx="12.16" transform="translate(950.495 1369.938)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Marketplace" transform="translate(1015.54 1444.438)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-47.43" y="0">Marketplace</tspan></text>
+    </g>
+    <g id="Group_1337" data-name="Group 1337">
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="130.089" height="149" rx="12.16" transform="translate(1094.305 1367.97)" fill="#f4f4f3" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="12"/>
+      <g id="Group_1336" data-name="Group 1336" style="isolation: isolate">
+        <path id="Path_4634" data-name="Path 4634" d="M1161.281,1429.317v13.277h13.094v3.5h-13.094v13.277h-3.866v-13.277h-13.1v-3.5h13.1v-13.277Z" fill="#231f20"/>
+      </g>
+    </g>
+    <g id="Group_1338" data-name="Group 1338">
+      <rect id="Rectangle_984" data-name="Rectangle 984" width="130.089" height="149.377" rx="12.16" transform="translate(805.37 1204.123)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Home_Maintenance" data-name="Home
+Maintenance" transform="translate(870.415 1278.812)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-22.493" y="0">Home</tspan><tspan x="-49.912" y="18">Maintenance</tspan></text>
+    </g>
+    <g id="Group_1339" data-name="Group 1339">
+      <rect id="Rectangle_985" data-name="Rectangle 985" width="130.089" height="149.377" rx="12.16" transform="translate(950.495 1204.123)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Home_Equity" data-name="Home
+Equity" transform="translate(1015.54 1278.812)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-22.493" y="0">Home</tspan><tspan x="-23.017" y="18">Equity</tspan></text>
+    </g>
+    <g id="Group_1340" data-name="Group 1340">
+      <rect id="Rectangle_986" data-name="Rectangle 986" width="130.089" height="149.377" rx="12.16" transform="translate(1094.766 1204.123)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Renovation" transform="translate(1159.81 1278.812)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-42.847" y="0">Renovation</tspan></text>
+    </g>
+    <circle id="Ellipse_23" data-name="Ellipse 23" cx="29.312" cy="29.312" r="29.312" transform="translate(1130.036 1415.126)" fill="none" stroke="#231f20" stroke-width="1"/>
+    <g id="Group_1341" data-name="Group 1341">
+      <rect id="Rectangle_987" data-name="Rectangle 987" width="130.089" height="149" rx="12.16" transform="matrix(0.966, -0.258, 0.258, 0.966, 1157.089, 1405.137)" fill="#f79e31" stroke="#231f20" stroke-width="1"/>
+      <text id="Rewards" transform="translate(1239.128 1460.325) rotate(-14.943)" fill="#231f20" font-size="15" font-family="Poppins-Medium, Poppins" font-weight="500" style="isolation: isolate"><tspan x="-32.61" y="0">Rewards</tspan></text>
+    </g>
+    <path id="Path_4635" data-name="Path 4635" d="M1273.223,1494.969l5.68,33.849,7.287-9.484,6.523,10.073,1.98-1.282,1.98-1.282-6.522-10.073,11.635-2.769Z" fill="#fff" stroke="#231f20" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
