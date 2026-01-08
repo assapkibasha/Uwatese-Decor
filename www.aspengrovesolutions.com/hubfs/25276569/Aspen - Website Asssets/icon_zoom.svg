@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="22.435" height="22.403" viewBox="0 0 22.435 22.403">
-  <g id="icon_zoom" transform="translate(-885.022 -444.691)">
-    <path id="Line_24" data-name="Line 24" d="M0,0H12" transform="translate(897.91 457.549) rotate(45)" fill="none" stroke="#231f20" stroke-width="3"/>
-    <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(895.628 444.691) rotate(45)" fill="#fff" stroke="#231f20" stroke-width="3">
-      <circle cx="7.5" cy="7.5" r="7.5" stroke="none"/>
-      <circle cx="7.5" cy="7.5" r="6" fill="none"/>
-    </g>
-  </g>
-</svg>
