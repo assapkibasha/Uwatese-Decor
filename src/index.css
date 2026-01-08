@@ -7,3 +7,22 @@ html {
 body {
   background: #07070a;
 }
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-logo-spin {
+  animation: logo-spin 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo-spin {
+    animation: none;
+  }
+}
