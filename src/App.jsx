@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#07070a] text-white">
-      <Navbar logoSrc="/umwatese_logo.jpg" />
+      <Navbar logoSrc="/uwatese_logo.png" />
 
       <main>
         <Hero img={img} images={images} />
