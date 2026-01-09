@@ -73,6 +73,19 @@ option {
   object-position: top;
 }
 
+@media (max-width: 640px) {
+  .uw-marquee-track {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .uw-marquee-item {
+    width: 210px;
+    height: 135px;
+    border-radius: 18px;
+  }
+}
+
 @keyframes uw-float-a {
   0% {
     transform: translate3d(0, 0, 0) rotate(-6deg);

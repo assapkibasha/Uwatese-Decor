@@ -79,11 +79,11 @@ export default function About({ img, images }) {
               and well-maintained items, reliable delivery and setup support when needed, and flexible packages.
             </p>
             <p className="mt-4 text-white/70">
-              Our mission is to simplify wedding preparation by offering key ceremony needs in one place—reducing stress,
+              Our mission is to simplify wedding preparation by offering key ceremony needs in one place reducing stress,
               saving time, and elevating every celebration.
             </p>
             <p className="mt-4 font-semibold text-white/90">
-              Uwatese Decor—Your Partner in Celebrating Love, Tradition, and Elegance.
+              Uwatese Decor Your Partner in Celebrating Love, Tradition, and Elegance.
             </p>
           </div>
 

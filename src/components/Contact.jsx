@@ -91,6 +91,9 @@ export default function Contact({
 }) {
   const bg = img && images?.length ? img(images[3]) : undefined
 
+  const mapsOpenUrl = 'https://maps.app.goo.gl/Se2pgNMnYJ9p7vR7A'
+  const mapsEmbedUrl = 'https://www.google.com/maps?q=Kigali%20Gasabo%20Kabuga&output=embed'
+
   const packages = [
     'Full Wedding Package',
     'Full Wedding Decoration',
@@ -218,6 +221,31 @@ export default function Contact({
                   </button>
                 )
               })}
+            </div>
+
+            <div className="mt-6 rounded-3xl border border-white/10 bg-black/20 p-4">
+              <div className="text-sm font-semibold text-white">Our location</div>
+              <div className="mt-1 text-sm text-white/70">{location}</div>
+              <a
+                href={mapsOpenUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-white/80 hover:bg-black/30"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-orange-500" aria-hidden="true" />
+                <span className="truncate">{mapsOpenUrl}</span>
+              </a>
+
+              <div className="mt-4 overflow-hidden rounded-2xl border border-orange-500/20 bg-black/30">
+                <iframe
+                  title="Uwatese Decor location"
+                  src={mapsEmbedUrl}
+                  className="h-56 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
 

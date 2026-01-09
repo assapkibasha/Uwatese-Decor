@@ -1,7 +1,6 @@
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
-import Location from './components/Location.jsx'
 import Gallery from './components/Gallery.jsx'
 import Packages from './components/Packages.jsx'
 import About from './components/About.jsx'
@@ -44,7 +43,6 @@ function App() {
       <main>
         <Hero img={img} images={images} />
         <Services />
-        <Location />
         <Gallery img={img} images={images} />
         <Packages />
         <About img={img} images={images} />
