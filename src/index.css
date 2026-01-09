@@ -8,6 +8,12 @@ body {
   background: #07070a;
 }
 
+select,
+option {
+  background-color: #07070a;
+  color: #ffffff;
+}
+
 @keyframes uw-float-a {
   0% {
     transform: translate3d(0, 0, 0) rotate(-6deg);
@@ -48,6 +54,30 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.uw-float-wrap-draggable {
+  pointer-events: auto;
+}
+
+.uw-float-draggable {
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+}
+
+.uw-float-draggable:active {
+  cursor: grabbing;
+}
+
+.uw-float-dragging .uw-float-a,
+.uw-float-dragging .uw-float-b,
+.uw-float-dragging .uw-float-c {
+  animation: none;
+}
+
+.uw-float-wrap-draggable:not(.uw-float-dragging) .uw-float-card {
+  transition: left 650ms ease, top 650ms ease;
 }
 
 .uw-float-card {
@@ -122,15 +152,15 @@ body {
 }
 
 .uw-float-star-on {
-  color: #f59e0b;
+  color: #0b1b5a;
 }
 
 .uw-float-card-b {
   width: 165px;
   height: 170px;
-  border-radius: 18px;
-  background: rgba(249, 115, 22, 0.92);
-  border: 1px solid rgba(249, 115, 22, 0.55);
+  border-radius: 10px;
+  background: rgba(249, 115, 22, 0.68);
+  border: 1px solid rgba(249, 115, 22, 0.4);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
 }
 
@@ -138,7 +168,7 @@ body {
   position: relative;
   height: 95px;
   margin: 10px;
-  border-radius: 14px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -165,7 +195,7 @@ body {
 .uw-float-card-b-rating-val {
   font-size: 12px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
+  color: #0b1b5a;
 }
 
 .uw-float-card-story {
@@ -177,7 +207,7 @@ body {
 }
 
 .uw-float-story-top {
-  height: 52px;
+  height: 32px;
   background: rgba(249, 115, 22, 0.18);
 }
 

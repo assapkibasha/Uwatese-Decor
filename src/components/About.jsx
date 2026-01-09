@@ -37,6 +37,27 @@ export default function About({ img, images }) {
       variant: 'story',
       className: 'uw-float-a right-4 top-28 rotate-6 scale-[0.68] z-10 hidden lg:block',
     },
+    {
+      key: 'about-story-6',
+      src: img(images[9]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-b left-44 top-32 -rotate-2 scale-[0.76] z-20 hidden sm:block',
+    },
+    {
+      key: 'about-story-7',
+      src: img(images[10]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-c right-24 top-40 rotate-3 scale-[0.7] z-10 hidden lg:block',
+    },
+    {
+      key: 'about-story-8',
+      src: img(images[11]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-a right-2 top-8 -rotate-6 scale-[0.66] z-30 hidden xl:block',
+    },
   ]
 
   return (
@@ -46,17 +67,29 @@ export default function About({ img, images }) {
           <div>
             <h2 className="text-3xl font-bold tracking-tight">About</h2>
             <p className="mt-4 text-white/70">
-              Uwatese Decor is based in Kigali. We combine modern design, clean execution, and beautiful details to
-              deliver weddings and parties that feel premium.
+              Uwatese Decor is a Rwandan wedding service company based in Kabuga, Gasabo District, Kigali. We provide
+              high-quality rental solutions for traditional and modern wedding ceremonies across Rwanda.
             </p>
             <p className="mt-4 text-white/70">
-              You already uploaded your images — next we can create a full gallery page and add WhatsApp booking.
+              Our services include ceremony attire, decorative equipment, reception accessories, and other essentials
+              for Gusaba, Gukwa, Umurenge weddings, and reception celebrations.
+            </p>
+            <p className="mt-4 text-white/70">
+              We respect Rwandan tradition while delivering a refined, contemporary aesthetic. Our commitment is clean
+              and well-maintained items, reliable delivery and setup support when needed, and flexible packages.
+            </p>
+            <p className="mt-4 text-white/70">
+              Our mission is to simplify wedding preparation by offering key ceremony needs in one place—reducing stress,
+              saving time, and elevating every celebration.
+            </p>
+            <p className="mt-4 font-semibold text-white/90">
+              Uwatese Decor—Your Partner in Celebrating Love, Tradition, and Elegance.
             </p>
           </div>
 
           <div className="relative overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-white/5 to-black/20">
             <div className="relative h-80">
-              <FloatingCards items={floatItems} className="uw-float-about" />
+              <FloatingCards items={floatItems} className="uw-float-about" draggable />
             </div>
           </div>
         </div>

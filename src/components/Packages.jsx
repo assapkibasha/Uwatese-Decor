@@ -1,65 +1,126 @@
 export default function Packages() {
   return (
     <section id="packages" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
-      <div className="flex flex-col gap-2">
-        <h2 className="text-3xl font-bold tracking-tight">Packages</h2>
-        <p className="max-w-2xl text-white/70">We can adjust names and pricing later. This is the structure.</p>
+      <div className="text-center">
+        <p className="text-sm text-white/70">THIS IS WHAT WE OFFER</p>
+        <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Packages</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-white/70">Premium wedding services and rentals—designed for Kigali celebrations.</p>
       </div>
 
-      <div className="mt-8 grid gap-4 lg:grid-cols-2">
-        <div className="rounded-3xl border border-white/10 bg-white/95 p-8 text-black">
-          <div className="flex items-center justify-between gap-3">
-            <h3 className="text-2xl font-semibold">Core</h3>
-            <span className="rounded-full bg-black/5 px-3 py-1 text-xs font-semibold">Popular</span>
-          </div>
-          <p className="mt-3 text-sm text-black/70">Elegant decor for intimate events and weddings.</p>
-          <ul className="mt-6 grid gap-3 text-sm">
-            {[
-              'Backdrop + simple stage setup',
-              'Table styling basics',
-              'Theme colors guidance',
-              'On-site setup & take-down',
-            ].map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <span className="mt-1 h-5 w-5 rounded-full bg-emerald-500/15 ring-1 ring-emerald-500/40" />
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#contact"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-black hover:bg-orange-400"
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          {
+            n: '1',
+            title: 'Full Wedding Package',
+            desc: 'Covers everything in the wedding—planning support, rentals, styling, and full coordination.',
+            icon: 'calendar',
+            imgExt: 'avif',
+          },
+          {
+            n: '2',
+            title: 'Clothes For Everyone',
+            desc: 'We provide outfits for the couple, bridesmaids, groomsmen, and family—clean and elegant.',
+            icon: 'users',
+            imgExt: 'jpg',
+          },
+          {
+            n: '3',
+            title: 'Traditional Ornaments Rental',
+            desc: 'Rent traditional ornaments and accessories for ceremonies and cultural moments.',
+            icon: 'sparkle',
+            imgExt: 'jpg',
+          },
+          {
+            n: '4',
+            title: 'Clothes Rental',
+            desc: 'Rent dresses, suits, and accessories for weddings, parties, photoshoots, and more.',
+            icon: 'hanger',
+            imgExt: 'avif',
+          },
+          {
+            n: '5',
+            title: 'Full Wedding Decoration',
+            desc: 'Complete wedding decoration: backdrop, stage, aisle, reception setup, lighting, and details.',
+            icon: 'flower',
+            imgExt: 'jpg',
+          },
+          {
+            n: '6',
+            title: 'Cakes',
+            desc: 'Beautiful cakes for weddings, birthdays, and special celebrations—made to match your theme.',
+            icon: 'sparkle',
+            imgExt: 'avif',
+          },
+        ].map((c) => (
+          <article
+            key={c.n}
+            className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
           >
-            Request invite
-          </a>
-        </div>
+            <div className="relative h-40 overflow-hidden">
+              <img
+                src={`/images/${c.n}.${c.imgExt}`}
+                alt={c.title}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/25 to-black/55" aria-hidden="true" />
 
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-          <div className="flex items-center justify-between gap-3">
-            <h3 className="text-2xl font-semibold">Elite</h3>
-            <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/80">Full experience</span>
-          </div>
-          <p className="mt-3 text-sm text-white/70">Luxury styling and a complete venue transformation.</p>
-          <ul className="mt-6 grid gap-3 text-sm text-white/80">
-            {[
-              'Custom concept + theme design',
-              'Lighting & premium decor elements',
-              'Full table settings & florals',
-              'Optional clothes + accessories rental bundle',
-            ].map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <span className="mt-1 h-5 w-5 rounded-full bg-emerald-500/15 ring-1 ring-emerald-500/40" />
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#contact"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-          >
-            Request invite
-          </a>
-        </div>
+              <div className="absolute left-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-orange-500 text-sm font-extrabold text-black">
+                {c.n}
+              </div>
+              <div className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-black ring-1 ring-black/5">
+                {c.icon === 'calendar' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7 3v3M17 3v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M4 7h16v14H4V7Z" stroke="currentColor" strokeWidth="2" />
+                    <path d="M4 11h16" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                )}
+                {c.icon === 'users' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" strokeWidth="2" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                )}
+                {c.icon === 'sparkle' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2l1.2 4.2L17 8l-3.8 1.8L12 14l-1.2-4.2L7 8l3.8-1.8L12 2Z" fill="currentColor" />
+                    <path d="M5 12l.7 2.4L8 15l-2.3 1.1L5 18l-.7-1.9L2 15l2.3-.6L5 12Z" fill="currentColor" opacity="0.9" />
+                    <path d="M19 13l.7 2.4L22 16l-2.3 1.1L19 19l-.7-1.9L16 16l2.3-.6L19 13Z" fill="currentColor" opacity="0.9" />
+                  </svg>
+                )}
+                {c.icon === 'hanger' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 6a2 2 0 1 1 4 0c0 1.2-.8 2-2.2 2.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M12 9.5l-9 6.5h18l-9-6.5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                    <path d="M3 16v4h18v-4" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                  </svg>
+                )}
+                {c.icon === 'flower' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 12c1.7 0 3-1.3 3-3 0-1.6-1.3-3-3-3s-3 1.4-3 3c0 1.7 1.3 3 3 3Z" stroke="currentColor" strokeWidth="2" />
+                    <path d="M12 12c-2.8 0-5 2.2-5 5v2h10v-2c0-2.8-2.2-5-5-5Z" stroke="currentColor" strokeWidth="2" />
+                    <path d="M4 10c1.1 1.2 2.8 2 4.7 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M20 10c-1.1 1.2-2.8 2-4.7 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                )}
+              </div>
+            </div>
+
+            <div className="p-6">
+              <h3 className="text-lg font-semibold">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{c.desc}</p>
+              <a
+                href="#contact"
+                className="mt-5 inline-flex items-center justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-black hover:bg-orange-400"
+              >
+                Get Started
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )

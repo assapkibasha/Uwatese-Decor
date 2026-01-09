@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 function CardIcon({ children }) {
   return (
     <span className="grid h-11 w-11 place-items-center rounded-2xl bg-orange-500 ring-1 ring-orange-400/30">
@@ -82,12 +84,62 @@ function ClockIcon() {
 export default function Contact({
   img,
   images,
-  phone = '+250 ...',
-  email = 'your@email.com',
-  location = 'Kigali, Rwanda',
+  phone = '0785661980, 0788731304',
+  email = 'uwatesedecorinfo@gmail.com',
+  location = 'Kigali, Gasabo, Kabuga',
   hours = 'Mon-Sun: 7AM - 10PM',
 }) {
   const bg = img && images?.length ? img(images[3]) : undefined
+
+  const packages = [
+    'Full Wedding Package',
+    'Full Wedding Decoration',
+    'Clothes For Everyone',
+    'Clothes Rental',
+    'Traditional Ornaments Rental',
+    'Cakes',
+    'Custom',
+  ]
+
+  const [form, setForm] = useState({
+    name: '',
+    phone: '',
+    date: '',
+    location,
+    service: '',
+    customRequest: '',
+    message: '',
+  })
+
+  const isCustom = form.service === 'Custom'
+  const canFill = Boolean(form.service)
+
+  const waText =
+    `Hello Uwatese Decor,%0A` +
+    `My name: ${encodeURIComponent(form.name || '-') }%0A` +
+    `Phone: ${encodeURIComponent(form.phone || '-') }%0A` +
+    `Event date: ${encodeURIComponent(form.date || '-') }%0A` +
+    `Location: ${encodeURIComponent(form.location || '-') }%0A` +
+    `Service: ${encodeURIComponent(form.service || '-') }%0A` +
+    (isCustom ? `Custom request: ${encodeURIComponent(form.customRequest || '-') }%0A` : '') +
+    `Details: ${encodeURIComponent(form.message || '-') }`
+
+  const waHref = `https://wa.me/250785661980?text=${waText}`
+
+  const mailSubject = encodeURIComponent('Booking Request - Uwatese Decor')
+  const mailBody =
+    `Hello Uwatese Decor,\n\n` +
+    `Name: ${form.name || '-'}\n` +
+    `Phone/WhatsApp: ${form.phone || '-'}\n` +
+    `Event date: ${form.date || '-'}\n` +
+    `Location: ${form.location || '-'}\n` +
+    `Service: ${form.service || '-'}\n\n` +
+    (isCustom ? `Custom request: ${form.customRequest || '-'}\n\n` : '') +
+    `Details:\n${form.message || '-'}\n`
+
+  const mailHref = `mailto:${email}?subject=${mailSubject}&body=${encodeURIComponent(mailBody)}`
+
+  const onChange = (key) => (e) => setForm((p) => ({ ...p, [key]: e.target.value }))
 
   return (
     <section id="contact" className="border-t border-white/10">
@@ -145,16 +197,38 @@ export default function Contact({
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80">
             <p className="text-base font-semibold text-white">Book now</p>
-            <p className="mt-2 text-white/70">
-              Share your event date, venue, theme colors, and what you need (decor, clothes rental, or both).
-            </p>
-            <p className="mt-4 text-white/70">
-              When you send me your WhatsApp number and email, I will update these cards to the real contacts.
-            </p>
+            <p className="mt-2 text-white/70">Choose a package first. After selecting, the form will unlock.</p>
+            <p className="mt-4 text-white/70">Location: Kigali, Gasabo, Kabuga. We reply fast and confirm availability.</p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {packages.map((p) => {
+                const active = form.service === p
+                return (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => setForm((prev) => ({ ...prev, service: p, customRequest: p === 'Custom' ? prev.customRequest : '' }))}
+                    className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${
+                      active
+                        ? 'border-orange-500/60 bg-orange-500/15 text-white ring-2 ring-orange-500/25'
+                        : 'border-white/10 bg-black/20 text-white/80 hover:bg-black/30'
+                    }`}
+                  >
+                    {p}
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           <form className="rounded-3xl border border-white/10 bg-white/5 p-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid gap-4">
+            <div className={`grid gap-4 ${canFill ? '' : 'opacity-60'}`}>
+              {!canFill && (
+                <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/70">
+                  Select a package on the left to continue.
+                </div>
+              )}
+
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-white/80">Your name</span>
                 <input
@@ -163,6 +237,9 @@ export default function Contact({
                   name="name"
                   autoComplete="name"
                   placeholder="Full name"
+                  value={form.name}
+                  onChange={onChange('name')}
+                  disabled={!canFill}
                 />
               </label>
               <label className="grid gap-2">
@@ -173,6 +250,9 @@ export default function Contact({
                   name="phone"
                   autoComplete="tel"
                   placeholder="+250 ..."
+                  value={form.phone}
+                  onChange={onChange('phone')}
+                  disabled={!canFill}
                 />
               </label>
               <label className="grid gap-2">
@@ -181,23 +261,74 @@ export default function Contact({
                   className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500/60"
                   type="date"
                   name="date"
+                  value={form.date}
+                  onChange={onChange('date')}
+                  disabled={!canFill}
                 />
               </label>
+              <label className="grid gap-2">
+                <span className="text-sm font-semibold text-white/80">Event location</span>
+                <input
+                  className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  type="text"
+                  name="location"
+                  placeholder="Kigali, Gasabo, Kabuga"
+                  value={form.location}
+                  onChange={onChange('location')}
+                  disabled={!canFill}
+                />
+              </label>
+              <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/80">
+                Selected package: <span className="font-semibold text-white">{form.service || '-'}</span>
+              </div>
+
+              {isCustom && (
+                <label className="grid gap-2">
+                  <span className="text-sm font-semibold text-white/80">What do you want?</span>
+                  <input
+                    className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                    type="text"
+                    name="customRequest"
+                    placeholder="Tell us exactly what you need..."
+                    value={form.customRequest}
+                    onChange={onChange('customRequest')}
+                    disabled={!canFill}
+                  />
+                </label>
+              )}
+
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-white/80">Message</span>
                 <textarea
                   className="min-h-28 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
                   name="message"
                   placeholder="Wedding decor, party setup, clothes rental..."
+                  value={form.message}
+                  onChange={onChange('message')}
+                  disabled={!canFill}
                 />
               </label>
 
-              <button
-                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-black hover:bg-orange-400"
-                type="submit"
-              >
-                Send
-              </button>
+              <div className="mt-1 grid gap-3 sm:grid-cols-2">
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${
+                    canFill ? 'bg-orange-500 text-black hover:bg-orange-400' : 'pointer-events-none bg-white/10 text-white/40'
+                  }`}
+                >
+                  Book on WhatsApp
+                </a>
+                <a
+                  href={mailHref}
+                  className={`inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold ${
+                    canFill ? 'border-white/20 bg-white/5 text-white hover:bg-white/10' : 'pointer-events-none border-white/10 bg-white/5 text-white/40'
+                  }`}
+                >
+                  Send via Email
+                </a>
+              </div>
             </div>
           </form>
         </div>

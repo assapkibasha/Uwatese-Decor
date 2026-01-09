@@ -35,7 +35,7 @@ export default function Hero({ img, images }) {
     <section id="home" className="relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-top"
-        style={{ backgroundImage: `url('${img(images[3])}')` }}
+        style={{ backgroundImage: "url('/images/black%20wed%20back.avif')" }}
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/65 to-[#07070a]" aria-hidden="true" />
@@ -67,7 +67,7 @@ export default function Hero({ img, images }) {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-20 grid gap-4 md:grid-cols-3">
           {[images[0], images[1], images[2]].map((name) => (
             <div key={name} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2">
               <img
