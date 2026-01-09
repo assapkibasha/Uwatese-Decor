@@ -3,11 +3,11 @@ export default function Navbar({ logoSrc }) {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/30 backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <a href="#home" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl">
+          <span className="grid h-12 w-12 place-items-center rounded-xl">
             <img
               src={logoSrc}
               alt="Uwatese Decor logo"
-              className="h-8 w-8 rounded-lg object-contain  p-0.5"
+              className="h-10 w-10 rounded-lg object-contain p-0.5"
               loading="eager"
             />
           </span>
@@ -18,6 +18,7 @@ export default function Navbar({ logoSrc }) {
         </a>
 
         <nav className="hidden items-center gap-2 text-sm text-white/80 md:flex" aria-label="Primary">
+          <a className="rounded-full px-3 py-2 hover:bg-white/10" href="#home">Home</a>
           <a className="rounded-full px-3 py-2 hover:bg-white/10" href="#services">Services</a>
           <a className="rounded-full px-3 py-2 hover:bg-white/10" href="#gallery">Gallery</a>
           <a className="rounded-full px-3 py-2 hover:bg-white/10" href="#packages">Packages</a>

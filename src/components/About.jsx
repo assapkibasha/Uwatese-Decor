@@ -1,4 +1,44 @@
+import FloatingCards from './FloatingCards.jsx'
+
 export default function About({ img, images }) {
+  const floatItems = [
+    {
+      key: 'about-story-1',
+      src: img(images[2]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-a left-5 top-10 -rotate-6 scale-[0.78] z-10',
+    },
+    {
+      key: 'about-story-2',
+      src: img(images[6]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-c left-16 top-5 scale-[0.84] z-20',
+    },
+    {
+      key: 'about-story-3',
+      src: img(images[1]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-b left-28 top-12 rotate-6 scale-[0.78] z-30',
+    },
+    {
+      key: 'about-story-4',
+      src: img(images[8]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-c right-10 top-6 -rotate-3 scale-[0.72] z-20 hidden md:block',
+    },
+    {
+      key: 'about-story-5',
+      src: img(images[4]),
+      alt: 'Uwatese Decor highlight',
+      variant: 'story',
+      className: 'uw-float-a right-4 top-28 rotate-6 scale-[0.68] z-10 hidden lg:block',
+    },
+  ]
+
   return (
     <section id="about" className="border-t border-white/10 bg-white/[0.03]">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
@@ -14,14 +54,10 @@ export default function About({ img, images }) {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-            <img
-              src={img(images[10])}
-              alt="Uwatese Decor"
-              className="h-80 w-full object-cover object-center opacity-100"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/0 to-black/0" aria-hidden="true" />
+          <div className="relative overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-white/5 to-black/20">
+            <div className="relative h-80">
+              <FloatingCards items={floatItems} className="uw-float-about" />
+            </div>
           </div>
         </div>
       </div>

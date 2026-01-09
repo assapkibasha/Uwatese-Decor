@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#07070a] text-white">
-      <Navbar logoSrc="/uwatese_logo.png" />
+      <Navbar logoSrc="/uwatese_logo.jpg" />
 
       <main>
         <Hero img={img} images={images} />
@@ -36,7 +36,7 @@ function App() {
         <Gallery img={img} images={images} />
         <Packages />
         <About img={img} images={images} />
-        <Contact />
+        <Contact img={img} images={images} />
       </main>
 
       <Footer />
