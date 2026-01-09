@@ -34,8 +34,8 @@ export default function Gallery({ img, images }) {
         </div>
 
         <div className="mt-8 grid gap-4">
-          <Row row={rowA.length ? rowA : items} duration={26} />
-          <Row row={rowB.length ? rowB : items} duration={32} reverse />
+          <Row row={rowA.length ? rowA : items} duration={44} />
+          <Row row={rowB.length ? rowB : items} duration={52} reverse />
         </div>
       </div>
     </section>
