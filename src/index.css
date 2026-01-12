@@ -1,23 +1,65 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #07070a;
+    --card: #ffffff;
+    --card-foreground: #07070a;
+    --popover: #ffffff;
+    --popover-foreground: #07070a;
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --accent: #f4f4f5;
+    --accent-foreground: #18181b;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: rgba(0, 0, 0, 0.05);
+    --input: rgba(0, 0, 0, 0.05);
+    --ring: #f97316;
+  }
+
+  .dark {
+    --background: #07070a;
+    --foreground: #ffffff;
+    --card: rgba(255, 255, 255, 0.08);
+    /* Matches existing card style roughly */
+    --card-foreground: #ffffff;
+    --popover: #07070a;
+    --popover-foreground: #ffffff;
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --muted: rgba(255, 255, 255, 0.1);
+    --muted-foreground: #a1a1aa;
+    --accent: rgba(255, 255, 255, 0.1);
+    --accent-foreground: #fafafa;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafafa;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #f97316;
+  }
 }
 
 body {
-  background: #07070a;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 select,
 option {
-  background-color: #07070a;
-  color: #ffffff;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 @keyframes uw-marquee-left {
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -27,6 +69,7 @@ option {
   0% {
     transform: translate3d(-50%, 0, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
@@ -36,8 +79,8 @@ option {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  background: var(--accent);
 }
 
 .uw-marquee-track {
@@ -62,8 +105,8 @@ option {
   height: 160px;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  background: var(--card);
 }
 
 .uw-marquee-img {
@@ -90,9 +133,11 @@ option {
   0% {
     transform: translate3d(0, 0, 0) rotate(-6deg);
   }
+
   50% {
     transform: translate3d(0, -10px, 0) rotate(-2deg);
   }
+
   100% {
     transform: translate3d(0, 0, 0) rotate(-6deg);
   }
@@ -102,9 +147,11 @@ option {
   0% {
     transform: translate3d(0, 0, 0) rotate(6deg);
   }
+
   50% {
     transform: translate3d(0, 12px, 0) rotate(2deg);
   }
+
   100% {
     transform: translate3d(0, 0, 0) rotate(6deg);
   }
@@ -114,9 +161,11 @@ option {
   0% {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
+
   50% {
     transform: translate3d(0, -8px, 0) rotate(2deg);
   }
+
   100% {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
@@ -158,8 +207,8 @@ option {
   height: 200px;
   border-radius: 22px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--card);
+  border: 1px solid var(--border);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
 }
@@ -184,6 +233,7 @@ option {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .uw-float-a,
   .uw-float-b,
   .uw-float-c {
@@ -220,7 +270,7 @@ option {
 
 .uw-float-star {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.22);
+  color: var(--muted-foreground);
 }
 
 .uw-float-star-on {
@@ -251,7 +301,7 @@ option {
 .uw-float-card-b-title {
   font-weight: 800;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--primary-foreground);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -119,13 +119,13 @@ export default function Contact({
 
   const waText =
     `Hello Uwatese Decor,%0A` +
-    `My name: ${encodeURIComponent(form.name || '-') }%0A` +
-    `Phone: ${encodeURIComponent(form.phone || '-') }%0A` +
-    `Event date: ${encodeURIComponent(form.date || '-') }%0A` +
-    `Location: ${encodeURIComponent(form.location || '-') }%0A` +
-    `Service: ${encodeURIComponent(form.service || '-') }%0A` +
-    (isCustom ? `Custom request: ${encodeURIComponent(form.customRequest || '-') }%0A` : '') +
-    `Details: ${encodeURIComponent(form.message || '-') }`
+    `My name: ${encodeURIComponent(form.name || '-')}%0A` +
+    `Phone: ${encodeURIComponent(form.phone || '-')}%0A` +
+    `Event date: ${encodeURIComponent(form.date || '-')}%0A` +
+    `Location: ${encodeURIComponent(form.location || '-')}%0A` +
+    `Service: ${encodeURIComponent(form.service || '-')}%0A` +
+    (isCustom ? `Custom request: ${encodeURIComponent(form.customRequest || '-')}%0A` : '') +
+    `Details: ${encodeURIComponent(form.message || '-')}`
 
   const waHref = `https://wa.me/250785661980?text=${waText}`
 
@@ -145,7 +145,7 @@ export default function Contact({
   const onChange = (key) => (e) => setForm((p) => ({ ...p, [key]: e.target.value }))
 
   return (
-    <section id="contact" className="border-t border-white/10">
+    <section id="contact" className="border-t border-black/5 dark:border-transparent">
       <div className="relative">
         <div
           className="h-64 w-full bg-cover bg-center"
@@ -155,8 +155,8 @@ export default function Contact({
         <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-            <p className="text-xs font-semibold tracking-[0.24em] text-orange-400">DISCOVER OUR CONTACT</p>
-            <h2 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">Contact Us</h2>
+            <p className="text-xs font-semibold tracking-[0.24em] text-orange-600 dark:text-orange-400">DISCOVER OUR CONTACT</p>
+            <h2 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl text-white">Contact Us</h2>
             <div className="mt-4 h-1 w-24 rounded-full bg-orange-500" aria-hidden="true" />
           </div>
         </div>
@@ -164,44 +164,44 @@ export default function Contact({
 
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-3xl border border-white/10 bg-white p-6 text-black shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <PhoneIcon />
             </CardIcon>
-            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600">PHONE</div>
-            <div className="mt-2 text-sm font-semibold text-black/90">{phone}</div>
+            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400">PHONE</div>
+            <div className="mt-2 text-sm font-semibold text-foreground/90">{phone}</div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white p-6 text-black shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <MailIcon />
             </CardIcon>
-            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600">EMAIL</div>
-            <div className="mt-2 text-sm font-semibold text-black/90">{email}</div>
+            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400">EMAIL</div>
+            <div className="mt-2 text-sm font-semibold text-foreground/90">{email}</div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white p-6 text-black shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <PinIcon />
             </CardIcon>
-            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600">LOCATION</div>
-            <div className="mt-2 text-sm font-semibold text-black/90">{location}</div>
+            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400">LOCATION</div>
+            <div className="mt-2 text-sm font-semibold text-foreground/90">{location}</div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white p-6 text-black shadow-[0_20px_40px_rgba(0,0,0,0.25)]">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <ClockIcon />
             </CardIcon>
-            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600">WORKING HOURS</div>
-            <div className="mt-2 text-sm font-semibold text-black/90">{hours}</div>
+            <div className="mt-4 text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400">WORKING HOURS</div>
+            <div className="mt-2 text-sm font-semibold text-foreground/90">{hours}</div>
           </div>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80">
-            <p className="text-base font-semibold text-white">Book now</p>
-            <p className="mt-2 text-white/70">Choose a package first. After selecting, the form will unlock.</p>
-            <p className="mt-4 text-white/70">Location: Kigali, Gasabo, Kabuga. We reply fast and confirm availability.</p>
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-sm text-muted-foreground shadow-md dark:border-transparent">
+            <p className="text-base font-semibold text-foreground">Book now</p>
+            <p className="mt-2 text-muted-foreground">Choose a package first. After selecting, the form will unlock.</p>
+            <p className="mt-4 text-muted-foreground">Location: Kigali, Gasabo, Kabuga. We reply fast and confirm availability.</p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {packages.map((p) => {
@@ -211,11 +211,10 @@ export default function Contact({
                     key={p}
                     type="button"
                     onClick={() => setForm((prev) => ({ ...prev, service: p, customRequest: p === 'Custom' ? prev.customRequest : '' }))}
-                    className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${
-                      active
-                        ? 'border-orange-500/60 bg-orange-500/15 text-white ring-2 ring-orange-500/25'
-                        : 'border-white/10 bg-black/20 text-white/80 hover:bg-black/30'
-                    }`}
+                    className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${active
+                      ? 'border-primary/60 bg-primary/15 text-primary ring-2 ring-primary/25'
+                      : 'border-black/5 dark:border-transparent bg-accent text-foreground hover:bg-accent/80'
+                      }`}
                   >
                     {p}
                   </button>
@@ -223,20 +222,20 @@ export default function Contact({
               })}
             </div>
 
-            <div className="mt-6 rounded-3xl border border-white/10 bg-black/20 p-4">
-              <div className="text-sm font-semibold text-white">Our location</div>
-              <div className="mt-1 text-sm text-white/70">{location}</div>
+            <div className="mt-6 rounded-3xl border border-black/5 bg-accent p-4 dark:border-transparent">
+              <div className="text-sm font-semibold text-foreground">Our location</div>
+              <div className="mt-1 text-sm text-muted-foreground">{location}</div>
               <a
                 href={mapsOpenUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-white/80 hover:bg-black/30"
+                className="mt-2 inline-flex max-w-full items-center gap-2 rounded-full border border-black/5 bg-card px-3 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-foreground dark:border-transparent"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-orange-500" aria-hidden="true" />
                 <span className="truncate">{mapsOpenUrl}</span>
               </a>
 
-              <div className="mt-4 overflow-hidden rounded-2xl border border-orange-500/20 bg-black/30">
+              <div className="mt-4 overflow-hidden rounded-2xl border border-orange-500/20 bg-card">
                 <iframe
                   title="Uwatese Decor location"
                   src={mapsEmbedUrl}
@@ -249,18 +248,18 @@ export default function Contact({
             </div>
           </div>
 
-          <form className="rounded-3xl border border-white/10 bg-white/5 p-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="rounded-3xl border border-black/5 bg-card p-6 shadow-md dark:border-transparent" onSubmit={(e) => e.preventDefault()}>
             <div className={`grid gap-4 ${canFill ? '' : 'opacity-60'}`}>
               {!canFill && (
-                <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/70">
+                <div className="rounded-2xl border border-black/5 bg-accent px-4 py-3 text-sm text-muted-foreground dark:border-transparent">
                   Select a package on the left to continue.
                 </div>
               )}
 
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-white/80">Your name</span>
+                <span className="text-sm font-semibold text-foreground/80">Your name</span>
                 <input
-                  className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -271,9 +270,9 @@ export default function Contact({
                 />
               </label>
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-white/80">Phone / WhatsApp</span>
+                <span className="text-sm font-semibold text-foreground/80">Phone / WhatsApp</span>
                 <input
-                  className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="tel"
                   name="phone"
                   autoComplete="tel"
@@ -284,9 +283,9 @@ export default function Contact({
                 />
               </label>
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-white/80">Event date</span>
+                <span className="text-sm font-semibold text-foreground/80">Event date</span>
                 <input
-                  className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="date"
                   name="date"
                   value={form.date}
@@ -295,9 +294,9 @@ export default function Contact({
                 />
               </label>
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-white/80">Event location</span>
+                <span className="text-sm font-semibold text-foreground/80">Event location</span>
                 <input
-                  className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="text"
                   name="location"
                   placeholder="Kigali, Gasabo, Kabuga"
@@ -306,15 +305,15 @@ export default function Contact({
                   disabled={!canFill}
                 />
               </label>
-              <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white/80">
-                Selected package: <span className="font-semibold text-white">{form.service || '-'}</span>
+              <div className="rounded-2xl border border-border bg-accent px-4 py-3 text-sm text-muted-foreground dark:border-transparent">
+                Selected package: <span className="font-semibold text-foreground">{form.service || '-'}</span>
               </div>
 
               {isCustom && (
                 <label className="grid gap-2">
-                  <span className="text-sm font-semibold text-white/80">What do you want?</span>
+                  <span className="text-sm font-semibold text-foreground/80">What do you want?</span>
                   <input
-                    className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                    className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                     type="text"
                     name="customRequest"
                     placeholder="Tell us exactly what you need..."
@@ -326,9 +325,9 @@ export default function Contact({
               )}
 
               <label className="grid gap-2">
-                <span className="text-sm font-semibold text-white/80">Message</span>
+                <span className="text-sm font-semibold text-foreground/80">Message</span>
                 <textarea
-                  className="min-h-28 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-orange-500/60"
+                  className="min-h-28 rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   name="message"
                   placeholder="Wedding decor, party setup, clothes rental..."
                   value={form.message}
@@ -342,17 +341,15 @@ export default function Contact({
                   href={waHref}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${
-                    canFill ? 'bg-orange-500 text-black hover:bg-orange-400' : 'pointer-events-none bg-white/10 text-white/40'
-                  }`}
+                  className={`inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold ${canFill ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'pointer-events-none bg-accent text-muted-foreground'
+                    }`}
                 >
                   Book on WhatsApp
                 </a>
                 <a
                   href={mailHref}
-                  className={`inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold ${
-                    canFill ? 'border-white/20 bg-white/5 text-white hover:bg-white/10' : 'pointer-events-none border-white/10 bg-white/5 text-white/40'
-                  }`}
+                  className={`inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold ${canFill ? 'border-primary/20 bg-primary/10 text-primary hover:bg-primary/20' : 'pointer-events-none border-black/5 bg-accent text-muted-foreground dark:border-transparent'
+                    }`}
                 >
                   Send via Email
                 </a>

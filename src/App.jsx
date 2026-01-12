@@ -10,6 +10,19 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [showTop, setShowTop] = useState(false)
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
+  }
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 450)
@@ -37,8 +50,8 @@ function App() {
   const img = (name) => `/images/${encodeURIComponent(name)}`
 
   return (
-    <div className="min-h-screen bg-[#07070a] text-white">
-      <Navbar logoSrc="/uwatese_logo.jpg" />
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <Navbar logoSrc="/uwaselogo.png" theme={theme} toggleTheme={toggleTheme} />
 
       <main>
         <Hero img={img} images={images} />
@@ -55,9 +68,8 @@ function App() {
         type="button"
         aria-label="Return to top"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-5 right-5 z-50 grid h-12 w-12 place-items-center rounded-full border border-white/10 bg-black/50 text-white shadow-[0_20px_40px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-black/70 ${
-          showTop ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`fixed bottom-5 right-5 z-50 grid h-12 w-12 place-items-center rounded-full border border-black/5 bg-card/50 text-foreground shadow-[0_20px_40px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-card/70 dark:border-white/10 ${showTop ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 19V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

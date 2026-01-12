@@ -18,16 +18,16 @@ export default function Gallery({ img, images }) {
   )
 
   return (
-    <section id="gallery" className="border-y border-white/10 bg-white/[0.03]">
+    <section id="gallery" className="border-y border-black/5 bg-accent/30 dark:border-white/10">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">Gallery</h2>
-            <p className="mt-2 max-w-2xl text-white/70">Hover a row to pause.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">Gallery</h2>
+            <p className="mt-2 max-w-2xl text-muted-foreground">Hover a row to pause.</p>
           </div>
           <a
             href="#contact"
-            className="hidden rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 md:inline-flex"
+            className="hidden rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/20 md:inline-flex"
           >
             Book now
           </a>
