@@ -38,7 +38,7 @@ export default function Hero({ img, images }) {
         style={{ backgroundImage: "url('/images/black%20wed%20back.avif')" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/65 to-[#07070a]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/65 to-background" aria-hidden="true" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pb-14 pt-14 sm:px-6 sm:pt-20">
         <FloatingCards items={floatItems} className="uw-float-hero" />
@@ -61,7 +61,7 @@ export default function Hero({ img, images }) {
           </a>
           <a
             href="#gallery"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-full border border-black/5 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 dark:border-white/10"
           >
             View gallery
           </a>
@@ -69,7 +69,7 @@ export default function Hero({ img, images }) {
 
         <div className="mt-20 grid gap-4 md:grid-cols-3">
           {[images[0], images[1], images[2]].map((name) => (
-            <div key={name} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2">
+            <div key={name} className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white/5 p-2 dark:border-white/10">
               <img
                 src={img(name)}
                 alt="Uwatese Decor event"

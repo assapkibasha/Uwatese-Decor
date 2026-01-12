@@ -103,7 +103,7 @@ export default function Services() {
     <section id="services" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-bold tracking-tight">Services</h2>
-        <p className="max-w-2xl text-white/70">Premium decoration + rentals, designed to match your theme, venue, and budget.</p>
+        <p className="max-w-2xl text-muted-foreground">Premium decoration + rentals, designed to match your theme, venue, and budget.</p>
       </div>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -111,18 +111,18 @@ export default function Services() {
           {
             title: 'Wedding decoration',
             desc: 'Stage & backdrop, flowers, aisle styling, reception setup, lighting, and full venue transformation.',
-            icon: <WeddingIcon className="h-5 w-5 text-orange-200" />,
+            icon: <WeddingIcon className="h-5 w-5 text-orange-600 dark:text-orange-200" />,
           },
           {
             title: 'Parties & events',
             desc: 'Birthdays, bridal showers, proposals, corporate events, and custom themes.',
-            icon: <PartyIcon className="h-5 w-5 text-orange-200" />,
+            icon: <PartyIcon className="h-5 w-5 text-orange-600 dark:text-orange-200" />,
           },
           {
             title: 'Clothes rental',
             desc: 'Elegant dresses, suits, traditional wear, and accessories for your special day.',
             icon: (
-              <div className="grid grid-cols-2 place-items-center gap-1 text-orange-200">
+              <div className="grid grid-cols-2 place-items-center gap-1 text-orange-600 dark:text-orange-200">
                 <TuxedoIcon className="h-4 w-4" />
                 <DressIcon className="h-4 w-4" />
               </div>
@@ -131,15 +131,15 @@ export default function Services() {
         ].map((s) => (
           <article
             key={s.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
+            className="rounded-3xl border border-black/5 bg-card p-6 shadow-md transition-shadow hover:shadow-lg dark:border-white/10"
           >
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-2xl bg-orange-500/20 ring-1 ring-orange-500/30">
                 {s.icon}
               </span>
-              <h3 className="text-lg font-semibold">{s.title}</h3>
+              <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/70">{s.desc}</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
           </article>
         ))}
       </div>

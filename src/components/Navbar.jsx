@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Navbar({ logoSrc }) {
+export default function Navbar({ logoSrc, theme, toggleTheme }) {
   const [active, setActive] = useState('home')
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Navbar({ logoSrc }) {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/30 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-white shadow-sm transition-all duration-300 dark:border-white/10 dark:bg-[#07070a]">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <a href="#home" className="flex items-center gap-3">
           <span className="grid h-12 w-12 place-items-center rounded-xl">
@@ -35,91 +35,78 @@ export default function Navbar({ logoSrc }) {
               loading="eager"
             />
           </span>
-          <div className="leading-tight">
-            <div className="text-lg font-extrabold tracking-wide">UWATESE</div>
-            <div className="text-xs text-white/60">Decor • Kigali, Rwanda</div>
+          <div className="leading-tight text-foreground">
+            <div className="text-lg font-extrabold tracking-wide text-white drop-shadow-md lg:text-xl">UWATESE</div>
+            <div className="text-xs text-muted-foreground">Decor • Kigali, Rwanda</div>
           </div>
         </a>
 
-        <nav className="hidden items-center gap-2 text-sm text-white/80 md:flex" aria-label="Primary">
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'home' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#home"
-          >
-            {active === 'home' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            Home
-          </a>
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'services' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#services"
-          >
-            {active === 'services' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            Services
-          </a>
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'gallery' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#gallery"
-          >
-            {active === 'gallery' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            Gallery
-          </a>
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'packages' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#packages"
-          >
-            {active === 'packages' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            Packages
-          </a>
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'about' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#about"
-          >
-            {active === 'about' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            About
-          </a>
-          <a
-            className={`relative rounded-full px-3 py-2 hover:bg-white/10 ${active === 'contact' ? 'bg-orange-500/15 text-orange-200' : ''}`}
-            href="#contact"
-          >
-            {active === 'contact' && (
-              <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-black">
-                U
-              </span>
-            )}
-            Contact
-          </a>
+        <nav className="hidden items-center gap-2 text-sm text-foreground/80 md:flex" aria-label="Primary">
+          {['home', 'services', 'gallery', 'packages', 'about', 'contact'].map((item) => (
+            <a
+              key={item}
+              className={`relative rounded-full px-3 py-2 transition-colors hover:bg-accent hover:text-accent-foreground ${active === item ? 'bg-orange-500/15 text-orange-600 dark:text-orange-200' : ''
+                }`}
+              href={`#${item}`}
+            >
+              {active === item && (
+                <span className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-extrabold text-white">
+                  U
+                </span>
+              )}
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          {toggleTheme && (
+            <button
+              onClick={toggleTheme}
+              className="grid h-10 w-10 place-items-center rounded-full border border-black/5 bg-accent/50 text-foreground transition-colors hover:bg-accent dark:border-white/10"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </button>
+          )}
+
           <a
             href="https://wa.me/250785661980"
             target="_blank"
             rel="noreferrer"
-            className={`hidden items-center justify-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold md:inline-flex ${
-              active === 'home'
-                ? 'border-white/15 bg-white/5 text-white hover:bg-white/10'
-                : 'border-orange-500/40 bg-orange-500 text-black hover:bg-orange-400'
-            }`}
+            className={`hidden items-center justify-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold transition-colors md:inline-flex ${active === 'home'
+              ? 'border-black/5 bg-accent/50 text-foreground hover:bg-accent dark:border-white/10'
+              : 'border-orange-500/40 bg-orange-500 text-white hover:bg-orange-600'
+              }`}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path
@@ -129,16 +116,16 @@ export default function Navbar({ logoSrc }) {
               />
               <path
                 d="M19.3 12.02c-.09-.04-2.08-1.03-2.4-1.14-.32-.12-.55-.18-.78.18-.23.36-.9 1.14-1.1 1.37-.2.23-.4.26-.74.09-.34-.17-1.42-.52-2.7-1.67-1-.9-1.67-2.02-1.86-2.36-.2-.34-.02-.52.15-.69.15-.15.34-.4.52-.6.17-.2.23-.34.35-.57.12-.23.06-.43-.03-.6-.09-.17-.78-1.88-1.07-2.58-.28-.67-.56-.58-.78-.59h-.67c-.23 0-.6.09-.92.43-.32.34-1.21 1.18-1.21 2.88 0 1.7 1.24 3.34 1.41 3.57.17.23 2.44 3.72 5.91 5.22.83.36 1.48.58 1.99.74.84.27 1.61.23 2.22.14.68-.1 2.08-.85 2.37-1.67.29-.82.29-1.53.2-1.67-.08-.14-.31-.23-.65-.4Z"
-                fill={active === 'home' ? '#07070a' : '#07070a'}
+                fill={active === 'home' ? 'currentColor' : '#000'}
               />
             </svg>
             <span>WhatsApp</span>
-            <span className={active === 'home' ? 'text-white/70' : 'text-black/70'}>0785661980</span>
+            <span className="opacity-70">0785661980</span>
           </a>
 
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-black hover:bg-orange-400"
+            className="inline-flex items-center justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-600"
           >
             Book now
           </a>

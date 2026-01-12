@@ -61,33 +61,33 @@ export default function About({ img, images }) {
   ]
 
   return (
-    <section id="about" className="border-t border-white/10 bg-white/[0.03]">
+    <section id="about" className="border-t border-black/5 bg-accent/30 dark:border-white/10">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">About</h2>
-            <p className="mt-4 text-white/70">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">About</h2>
+            <p className="mt-4 text-muted-foreground">
               Uwatese Decor is a Rwandan wedding service company based in Kabuga, Gasabo District, Kigali. We provide
               high-quality rental solutions for traditional and modern wedding ceremonies across Rwanda.
             </p>
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-muted-foreground">
               Our services include ceremony attire, decorative equipment, reception accessories, and other essentials
               for Gusaba, Gukwa, Umurenge weddings, and reception celebrations.
             </p>
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-muted-foreground">
               We respect Rwandan tradition while delivering a refined, contemporary aesthetic. Our commitment is clean
               and well-maintained items, reliable delivery and setup support when needed, and flexible packages.
             </p>
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-muted-foreground">
               Our mission is to simplify wedding preparation by offering key ceremony needs in one place reducing stress,
               saving time, and elevating every celebration.
             </p>
-            <p className="mt-4 font-semibold text-white/90">
+            <p className="mt-4 font-semibold text-foreground/90">
               Uwatese Decor Your Partner in Celebrating Love, Tradition, and Elegance.
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-white/5 to-black/20">
+          <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-primary/5 via-accent to-background/20 shadow-md dark:border-white/10">
             <div className="relative h-80">
               <FloatingCards items={floatItems} className="uw-float-about" draggable />
             </div>
