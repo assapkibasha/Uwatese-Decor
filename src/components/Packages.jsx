@@ -54,7 +54,7 @@ export default function Packages() {
         ].map((c) => (
           <article
             key={c.n}
-            className="relative overflow-hidden rounded-3xl border border-black/5 bg-card shadow-md transition-shadow hover:shadow-xl dark:border-white/10"
+            className="relative overflow-hidden rounded-3xl border border-black/5 bg-card shadow-md transition-shadow hover:shadow-xl dark:border-transparent"
           >
             <div className="relative h-40 overflow-hidden">
               <img
@@ -68,7 +68,7 @@ export default function Packages() {
               <div className="absolute left-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-orange-500 text-sm font-extrabold text-black">
                 {c.n}
               </div>
-              <div className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-foreground ring-1 ring-black/5 dark:ring-white/10">
+              <div className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-foreground ring-1 ring-black/5 dark:ring-transparent">
                 {c.icon === 'calendar' && (
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M7 3v3M17 3v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

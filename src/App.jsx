@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Navbar logoSrc="/uwatese_logo.jpg" theme={theme} toggleTheme={toggleTheme} />
+      <Navbar logoSrc="/uwaselogo.png" theme={theme} toggleTheme={toggleTheme} />
 
       <main>
         <Hero img={img} images={images} />

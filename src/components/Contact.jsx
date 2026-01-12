@@ -145,7 +145,7 @@ export default function Contact({
   const onChange = (key) => (e) => setForm((p) => ({ ...p, [key]: e.target.value }))
 
   return (
-    <section id="contact" className="border-t border-black/5 dark:border-white/10">
+    <section id="contact" className="border-t border-black/5 dark:border-transparent">
       <div className="relative">
         <div
           className="h-64 w-full bg-cover bg-center"
@@ -164,7 +164,7 @@ export default function Contact({
 
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-white/10">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <PhoneIcon />
             </CardIcon>
@@ -172,7 +172,7 @@ export default function Contact({
             <div className="mt-2 text-sm font-semibold text-foreground/90">{phone}</div>
           </div>
 
-          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-white/10">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <MailIcon />
             </CardIcon>
@@ -180,7 +180,7 @@ export default function Contact({
             <div className="mt-2 text-sm font-semibold text-foreground/90">{email}</div>
           </div>
 
-          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-white/10">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <PinIcon />
             </CardIcon>
@@ -188,7 +188,7 @@ export default function Contact({
             <div className="mt-2 text-sm font-semibold text-foreground/90">{location}</div>
           </div>
 
-          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-white/10">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-card-foreground shadow-md transition-shadow hover:shadow-lg dark:border-transparent">
             <CardIcon>
               <ClockIcon />
             </CardIcon>
@@ -198,7 +198,7 @@ export default function Contact({
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-black/5 bg-card p-6 text-sm text-muted-foreground shadow-md dark:border-white/10">
+          <div className="rounded-3xl border border-black/5 bg-card p-6 text-sm text-muted-foreground shadow-md dark:border-transparent">
             <p className="text-base font-semibold text-foreground">Book now</p>
             <p className="mt-2 text-muted-foreground">Choose a package first. After selecting, the form will unlock.</p>
             <p className="mt-4 text-muted-foreground">Location: Kigali, Gasabo, Kabuga. We reply fast and confirm availability.</p>
@@ -213,7 +213,7 @@ export default function Contact({
                     onClick={() => setForm((prev) => ({ ...prev, service: p, customRequest: p === 'Custom' ? prev.customRequest : '' }))}
                     className={`rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition ${active
                       ? 'border-primary/60 bg-primary/15 text-primary ring-2 ring-primary/25'
-                      : 'border-black/5 dark:border-white/10 bg-accent text-foreground hover:bg-accent/80'
+                      : 'border-black/5 dark:border-transparent bg-accent text-foreground hover:bg-accent/80'
                       }`}
                   >
                     {p}
@@ -222,14 +222,14 @@ export default function Contact({
               })}
             </div>
 
-            <div className="mt-6 rounded-3xl border border-black/5 bg-accent p-4 dark:border-white/10">
+            <div className="mt-6 rounded-3xl border border-black/5 bg-accent p-4 dark:border-transparent">
               <div className="text-sm font-semibold text-foreground">Our location</div>
               <div className="mt-1 text-sm text-muted-foreground">{location}</div>
               <a
                 href={mapsOpenUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex max-w-full items-center gap-2 rounded-full border border-black/5 bg-card px-3 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-foreground dark:border-white/10"
+                className="mt-2 inline-flex max-w-full items-center gap-2 rounded-full border border-black/5 bg-card px-3 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-foreground dark:border-transparent"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-orange-500" aria-hidden="true" />
                 <span className="truncate">{mapsOpenUrl}</span>
@@ -248,10 +248,10 @@ export default function Contact({
             </div>
           </div>
 
-          <form className="rounded-3xl border border-black/5 bg-card p-6 shadow-md dark:border-white/10" onSubmit={(e) => e.preventDefault()}>
+          <form className="rounded-3xl border border-black/5 bg-card p-6 shadow-md dark:border-transparent" onSubmit={(e) => e.preventDefault()}>
             <div className={`grid gap-4 ${canFill ? '' : 'opacity-60'}`}>
               {!canFill && (
-                <div className="rounded-2xl border border-black/5 bg-accent px-4 py-3 text-sm text-muted-foreground dark:border-white/10">
+                <div className="rounded-2xl border border-black/5 bg-accent px-4 py-3 text-sm text-muted-foreground dark:border-transparent">
                   Select a package on the left to continue.
                 </div>
               )}
@@ -259,7 +259,7 @@ export default function Contact({
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-foreground/80">Your name</span>
                 <input
-                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -272,7 +272,7 @@ export default function Contact({
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-foreground/80">Phone / WhatsApp</span>
                 <input
-                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="tel"
                   name="phone"
                   autoComplete="tel"
@@ -285,7 +285,7 @@ export default function Contact({
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-foreground/80">Event date</span>
                 <input
-                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="date"
                   name="date"
                   value={form.date}
@@ -296,7 +296,7 @@ export default function Contact({
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-foreground/80">Event location</span>
                 <input
-                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   type="text"
                   name="location"
                   placeholder="Kigali, Gasabo, Kabuga"
@@ -305,7 +305,7 @@ export default function Contact({
                   disabled={!canFill}
                 />
               </label>
-              <div className="rounded-2xl border border-border bg-accent px-4 py-3 text-sm text-muted-foreground">
+              <div className="rounded-2xl border border-border bg-accent px-4 py-3 text-sm text-muted-foreground dark:border-transparent">
                 Selected package: <span className="font-semibold text-foreground">{form.service || '-'}</span>
               </div>
 
@@ -313,7 +313,7 @@ export default function Contact({
                 <label className="grid gap-2">
                   <span className="text-sm font-semibold text-foreground/80">What do you want?</span>
                   <input
-                    className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                    className="rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                     type="text"
                     name="customRequest"
                     placeholder="Tell us exactly what you need..."
@@ -327,7 +327,7 @@ export default function Contact({
               <label className="grid gap-2">
                 <span className="text-sm font-semibold text-foreground/80">Message</span>
                 <textarea
-                  className="min-h-28 rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                  className="min-h-28 rounded-2xl border border-input bg-accent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/60 dark:border-transparent"
                   name="message"
                   placeholder="Wedding decor, party setup, clothes rental..."
                   value={form.message}
@@ -348,7 +348,7 @@ export default function Contact({
                 </a>
                 <a
                   href={mailHref}
-                  className={`inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold ${canFill ? 'border-primary/20 bg-primary/10 text-primary hover:bg-primary/20' : 'pointer-events-none border-black/5 bg-accent text-muted-foreground dark:border-white/10'
+                  className={`inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold ${canFill ? 'border-primary/20 bg-primary/10 text-primary hover:bg-primary/20' : 'pointer-events-none border-black/5 bg-accent text-muted-foreground dark:border-transparent'
                     }`}
                 >
                   Send via Email

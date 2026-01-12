@@ -44,7 +44,7 @@ export default function Hero({ img, images }) {
         <FloatingCards items={floatItems} className="uw-float-hero" />
         <p className="text-xs font-semibold tracking-[0.24em] text-white/70">WEDDINGS • PARTIES • CLOTHES RENTAL</p>
         <h1 className="mt-4 text-5xl font-black tracking-tight sm:text-6xl md:text-7xl">
-          UWATESE
+          <span className="text-white/90">UWATESE</span>
           <span className="block text-white/90">DECOR</span>
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
