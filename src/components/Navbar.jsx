@@ -31,13 +31,13 @@ export default function Navbar({ logoSrc, theme, toggleTheme }) {
         : 'border-black/5 !bg-white text-black'
         }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <a href="#home" className="flex items-center gap-3">
-          <span className="grid h-14 w-14 place-items-center rounded-xl sm:h-16 sm:w-16">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-3 py-3   sm:px-6">
+        <a href="#home" className="flex items-center gap-3 ">
+          <span className="grid h-40 w-40 place-items-center rounded-xl sm:h-16 sm:w-16">
             <img
               src={logoSrc}
               alt="Uwatese Decor logo"
-              className="h-12 w-12 rounded-lg object-contain p-0.5 sm:h-14 sm:w-14"
+              className=" rounded-lg object-contain p-0.5 sm:h-14 sm:w-14"
               loading="eager"
             />
           </span>

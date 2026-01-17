@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 export default function Gallery({ img, images }) {
-  const items = useMemo(() => (images || []).slice(0, 14), [images])
+  const items = useMemo(() => images || [], [images])
   const rowA = items.slice(0, Math.ceil(items.length / 2))
   const rowB = items.slice(Math.ceil(items.length / 2))
 

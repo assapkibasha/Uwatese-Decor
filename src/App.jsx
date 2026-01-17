@@ -45,6 +45,13 @@ function App() {
     'WhatsApp Image 2026-01-05 at 11.48.13 AM.jpeg',
     'WhatsApp Image 2026-01-05 at 11.48.15 AM.jpeg',
     'WhatsApp Image 2026-01-05 at 11.48.17 AM.jpeg',
+    'a1.avif',
+    'a2.avif',
+    'a3.webp',
+    'a4.avif',
+    'a5.avif',
+    'a6.jpg',
+    'a7.avif',
   ]
 
   const img = (name) => `/images/${encodeURIComponent(name)}`
